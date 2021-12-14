@@ -17,7 +17,7 @@ chart_def = """
         text: 'Atmosphere Temperature by Altitude'
     },
     subtitle: {
-        text: 'According to the Standard Atmosphere Model'
+        text: 'According to the Course Reviews Dataset'
     },
     xAxis: {
         reversed: false,
@@ -29,7 +29,7 @@ chart_def = """
             format: '{value}'
         },
         accessibility: {
-            rangeDescription: 'Range: 0 to 80 km.'
+            rangeDescription: 'Range: 2018 to 2021.'
         },
         maxPadding: 0.05,
         showLastLabel: true
@@ -42,7 +42,7 @@ chart_def = """
             format: '{value}'
         },
         accessibility: {
-            rangeDescription: 'Range: -90°C to 20°C.'
+            rangeDescription: 'Range: 0 to 5.'
         },
         lineWidth: 2
     },

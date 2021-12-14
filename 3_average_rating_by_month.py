@@ -4,8 +4,8 @@ import justpy as jp
 import pandas
 
 data = pandas.read_csv("reviews.csv", parse_dates=["Timestamp"])
-data["Day"] = data["Timestamp"].dt.date
-day_average = data.groupby(["Day"]).mean()
+data["Month"] = data["Timestamp"].dt.strftime("%Y-%m")
+month_average = data.groupby(["Month"]).mean()
 
 chart_def = """
 {
@@ -79,9 +79,9 @@ def app():
     p1 = jp.QDiv(a=site, text="This graphs represent course review analysis")
     hc = jp.HighCharts(a=site, options=chart_def)
 
-    hc.options.title.text = "Average Rating by Day"
-    hc.options.xAxis.categories = list(day_average.index)
-    hc.options.series[0].data = list(day_average["Rating"])
+    hc.options.title.text = "Average Rating by Month"
+    hc.options.xAxis.categories = list(month_average.index)
+    hc.options.series[0].data = list(month_average["Rating"])
 
     return site
 
